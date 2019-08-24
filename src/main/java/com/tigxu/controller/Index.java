@@ -27,6 +27,14 @@ public class Index extends Supper {
      */
     @RequestMapping("/")
     public String   index(HttpServletRequest request){
+        String remoteAddr = "";
+
+        if (request != null) {
+            remoteAddr = request.getHeader("X-FORWARDED-FOR");
+            if (remoteAddr == null || "".equals(remoteAddr)) {
+                remoteAddr = request.getRemoteAddr();
+            }
+        }
         return "index";
     }
     @RequestMapping("/upresume")
@@ -38,4 +46,6 @@ public class Index extends Supper {
     public String   login(){
         return "login";
     }
+    @RequestMapping("/flow")
+    public String   flow(){return "flow";}
 }

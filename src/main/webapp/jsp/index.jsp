@@ -64,7 +64,6 @@
         </div>
     </form>
 </div>
-
 <script src="<%=basePath%>static/library/js/jquery-3.4.1.min.js"></script>
 <script src="<%=basePath%>static/library/js/bootstrap.min.js"></script>
 <script src="<%=basePath%>static/library/layui.js"></script>
